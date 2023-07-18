@@ -78,5 +78,28 @@ const primeFactorArray = PrimeFactors(number);
 
 console.log("PrimeFactor of number "+number+" is: "+primeFactorArray)
 
+function SumOfThreeNumberAddsToZero(array){
+    let sum = new Array();
 
+    for(let i = 0;i < array.length -2 ; i++){
+        for(let j = i + 1; j < array.length -1;j++ ){
+            for(let k = j + 1; k < array.length ; k++ ){
+                if(array[i] + array[j] + array[k] == 0){
+                    sum.push(array[i],array[j],array[k]);
+                }
+            }
+        }
+    }
+    return sum;
+}
 
+let numberArray = [1,-2,2,5,-1,-4,0,4,-3];
+const sumOfArray = SumOfThreeNumberAddsToZero(numberArray);
+
+if(sumOfArray.length > 0){
+    sumOfArray.forEach(function(element){
+        console.log(element);
+    });
+}else{
+    console.log("No elements found to get the sum zero");
+}
