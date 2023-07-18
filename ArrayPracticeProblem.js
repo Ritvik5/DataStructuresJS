@@ -103,3 +103,31 @@ if(sumOfArray.length > 0){
 }else{
     console.log("No elements found to get the sum zero");
 }
+
+
+function RepeatingNumbersInRange(start,end){
+    let repeatingNumber = new Array();
+
+    for(let num = start; num<=end;num++){
+        let numString = num.toString();
+    
+
+    for(let i = 0;i <numString.length;i++){
+        const digit = numString[i];
+        if(numString.indexOf(digit) != numString.lastIndexOf(digit)){
+            repeatingNumber.push(num);
+            break;
+        }
+    }
+    }
+    return repeatingNumber;
+}
+
+let startRange = 0;
+let endRange = 100;
+
+let repeatedNumber = RepeatingNumbersInRange(startRange,endRange);
+
+repeatedNumber.forEach(function(element){
+    console.log(element);
+});
