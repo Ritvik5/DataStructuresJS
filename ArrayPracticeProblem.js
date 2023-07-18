@@ -52,5 +52,31 @@ function SeconSmallestNumber(arr){
     console.log("Second smallest number is : "+secondSmallestNumber);
 }
 
+function PrimeFactors(number){
+    let primeFactors = new Array();
+
+    while( number % 2 == 0){
+        primeFactors.push(2);
+        number = number / 2;
+    }
+
+    for(let i = 3 ; i * i <= number; i++){
+        while(number % i == 0){
+            primeFactors.push(i);
+            number = number/i;
+        }
+    }
+    if( number > 2){
+        primeFactors.push(number);
+    }
+    return primeFactors;
+}
+
+const number = 85;
+
+const primeFactorArray = PrimeFactors(number);
+
+console.log("PrimeFactor of number "+number+" is: "+primeFactorArray)
+
 
 
